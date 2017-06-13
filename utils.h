@@ -22,7 +22,7 @@ T factorial(T n)
  * 					'objects' are not replaced prior to subsequent choices.
  *	Method:			T nrDescent(T i, T c) 
  * 	Arguments:		i = initial value; c = how far down to count from i
- * 	Returns:		-5 if the count is greater than the initial value
+ * 	Returns:		0 if the count is greater than the initial value
  * 					Appropriate value otherwise
  * 
  **/
@@ -40,6 +40,17 @@ T nrDescent(T i, T c)
 	} 
 	return (T)temp;
 }
+
+/**
+ * 	Name:			Binomial Coefficient
+ * 	Purpose:		To compute appropriate binomial coefficients for 
+ *					values entered as arguments.
+ *	Method:			T binomCoeff(T n, T k)
+ * 	Arguments:		n = Top Value; k = Bottom value
+ * 	Returns:		0 if the count is greater than the initial value
+ * 					Appropriate value otherwise
+ * 
+ **/
 template <typename T>
 T binomCoeff(T n, T k)
 {

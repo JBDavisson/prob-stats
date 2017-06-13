@@ -1,4 +1,5 @@
 #include "utils.h"
+#include "prob.h"
 #include <iostream>
 #include <cstdio>
 
