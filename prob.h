@@ -11,7 +11,7 @@ S binomDist(T n, T k, S p)
 	S q = (1 - p);
 	T bin = binomCoeff(n, k);
 	S temp = S();
-	if(bin == 0 || q <= 0) 
+	if(bin == 0 || q <= 0 || p <= 0) 
 	{ 
 		temp = 0; 
 	}
@@ -47,12 +47,12 @@ S nrProbability(T n, T k, T t)
 {
 	S retVal = 0.0;
 	T bin = binomCoeff(n, k);
-	printf("bin: %d\n", bin);
+	//printf("bin: %d\n", bin);
 	if (bin <= retVal) { return retVal; }
 	S num = nrDescent(t, k);
 	S den = nrDescent(t, n);
-	printf("num = %f\n", num);
-	printf("den = %f\n", den);
+	//printf("num = %f\n", num);
+	//printf("den = %f\n", den);
 	retVal = (bin*(num/den));
 	return retVal;
 }
