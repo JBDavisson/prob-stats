@@ -18,5 +18,6 @@ int main(int argc, char** argv)
 	printf("binomDist(3, 1, 0.5) = %f\n", binomDist(3,1,.5));
 	printf("binomDist(10,2,0.5) = %f\n", binomDist(10,2,0.5));
 	printf("poissonDist(5, 0) = %f\n", poissonDist(5.0, 0));
+	printf("nrProbability(4, 2, 52) = %f\n", nrProbability(4, 2, 52));
 	return 0;
 }

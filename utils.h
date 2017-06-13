@@ -3,6 +3,15 @@
 
 #include <cstdint>
 
+/**
+ * 	Name:			Factorial
+ * 	Purpose:		To recursively compute the factorial for the integer
+ * 					value passed in as a parameter: n.
+ *	Method:			T factorial(T n) 
+ * 	Arguments:		n = value to compute factorial for.
+ * 	Returns:		0 if n < 0
+ * 
+ **/
 template <typename T = int>
 T factorial(T n)
 {
