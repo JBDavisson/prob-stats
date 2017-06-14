@@ -11,7 +11,7 @@ S binomDist(T n, T k, S p)
 	S q = (1 - p);
 	T bin = binomCoeff(n, k);
 	S temp = S();
-	if(bin == 0 || q <= 0 || p <= 0) 
+	if(bin == 0 || q <= 0 || p <= 0 || p>=1) 
 	{ 
 		temp = 0; 
 	}

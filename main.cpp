@@ -20,5 +20,13 @@ int main(int argc, char** argv)
 	printf("binomDist(3,1,0.6) = %f\n", binomDist(3,1,0.6));
 	printf("poissonDist(5, 0) = %f\n", poissonDist(5.0, 0));
 	printf("nrProbability(3, 0, 52) = %f\n", nrProbability(4, 2, 52));
+	double temp = 0;
+	int choices = 11;
+	for(int i = 0; i < choices; i++)
+	{
+		temp += binomDist((choices - 1), i, (1.0/2.0));
+		printf("[%d] = %f\n", i+1, temp);
+	}
+	printf("Temp = %f\n", temp);
 	return 0;
 }
