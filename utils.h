@@ -2,6 +2,7 @@
 #define __UTILS_HPP__
 
 #include <cstdint>
+#include "mathTypes.h"
 
 /**
  * 	Name:			Factorial
