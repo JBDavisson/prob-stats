@@ -1,11 +1,13 @@
 #include "utils.h"
 #include "prob.h"
+#include "mathTypes.h"
 
 #include <iostream>
 #include <cstdio>
 
 int main(int argc, char** argv)
 {
+	Complex<double_t> cplx(2.0,1.0);
 	printf("Factorial of 3 is: %d.\n", factorial<int>(3));
 	printf("nrDescent(2,3) = %d\n", nrDescent<int>(2,3));
 	printf("nrDescent(3,2) = %d\n", nrDescent<int>(3,2));
@@ -21,10 +23,10 @@ int main(int argc, char** argv)
 	printf("poissonDist(5, 0) = %f\n", poissonDist(5.0, 0));
 	printf("nrProbability(3, 0, 52) = %f\n", nrProbability(4, 2, 52));
 	double temp = 0;
-	int choices = 20;
+	int choices = 5;
 	for(int i = 0; i < choices; i++)
 	{
-		temp += binomDist((choices - 1), i, (1.0/2.0));
+		temp += binomDist((choices - 1), i, (2.0/3.0));
 		printf("[%d] = %f\n", i+1, temp);
 	}
 	printf("Temp = %f\n", temp);

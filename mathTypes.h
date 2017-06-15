@@ -7,7 +7,7 @@ typedef double_t Component;
 typedef double_t Magnitude;
 typedef double_t Phase;
 
-template <typename T = double>
+template <typename T>
 class Complex
 {
 	private:
@@ -15,16 +15,19 @@ class Complex
 		Component 	b;
 		Magnitude 	mag;
 		Phase 		ang;
-		void computeMagnitude();
-		void computePhase();
+		void 		computeMagnitude();
+		void 		computePhase();
 	
 	public:
-		Complex();
-		Complex(Component a, Component b);
-		Magnitude getMagnitude() const;
-		Phase getPhase() const;
+		//Constructor methods.
+		Complex<T>();
+		Complex<T>(const Component a, const Component b);
+		
+		//Begin non-constructor methods.
+		Magnitude 		getMagnitude() const;
+		Phase 			getPhase() const;
 		~Complex();
 };
 
-
+#include "mathTypes.hpp"
 #endif
