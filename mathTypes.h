@@ -2,6 +2,7 @@
 #define __MATH__TYPES__HH__
 
 #include <math.h>
+#include <iostream>
 
 typedef double_t Component;
 typedef double_t Magnitude;
@@ -24,8 +25,15 @@ class Complex
 		Complex<T>(const Component a, const Component b);
 		
 		//Begin non-constructor methods.
+		Component		getRealPart() const;
+		Component		getImaginaryPart() const;
 		Magnitude 		getMagnitude() const;
 		Phase 			getPhase() const;
+		
+		//Operator Overloads
+		std::ostream& operator << (std::ostream& os/*, const Complex<T>& c*/);
+		
+		//Class object destructor
 		~Complex();
 };
 

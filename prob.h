@@ -57,4 +57,32 @@ S nrProbability(T n, T k, T t)
 	return retVal;
 }
 
+template <typename T = int, typename S = double>
+S geometricProb(T x, S p)
+{
+	if((x <= 0) || (p >= 1) || (p <= 0))
+	{
+		return (S)0;
+	}
+	S q = (1 - p);
+	//S retVal = std::pow((1-p), (x-1))*(p);
+	return (S)std::pow(q, (x-1))*(p);//retVal;
+}
+
+template <typename T = int, typename S = double>
+S negBinomial(T n, T x, S p)
+{
+	if((x > n) || (p >= 1) || (p <= 0))
+	{ 
+		return (S)0; 
+	}
+	S q = (1 - p);
+	T a = (n - 1);
+	T b = (x - 1);
+	T coeff = binomCoeff(a, b);
+	S temp = std::pow(p, b)*std::pow(q, (a-b));
+	S retVal = coeff*temp;
+	return retVal;
+}
+
 #endif
