@@ -38,7 +38,18 @@ class Complex
 		Complex<T> operator * (Complex<T> com);
 		friend std::ostream& operator << (std::ostream& os, Complex<T> com)
 		{
-			os << "(" << com.getRealPart() << ", j" << com.getImaginaryPart() << ")";
+			if(com.getImaginaryPart() >= 0)
+			{
+				os << "(" << com.getRealPart() << ", j" << com.getImaginaryPart() << ")";
+			}
+			else if (com.getImaginaryPart() < 0)
+			{
+				os << "(" << com.getRealPart() << ", -j" << std::abs(com.getImaginaryPart()) << ")";
+			}
+			else
+			{
+				os << "(" << com.getRealPart() << ", j" << com.getImaginaryPart() << ")";
+			}
 			return os;
 		}
 		

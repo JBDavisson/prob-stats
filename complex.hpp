@@ -89,7 +89,7 @@ template <typename T>
 void Complex<T>::complexConjugate()
 {
 	Component temp = -(this->b);
-	this->setComponents(this->a, temp);
+	setComponents(this->a, temp);
 }
 
 template <typename T>

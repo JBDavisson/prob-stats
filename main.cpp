@@ -21,6 +21,8 @@ int main(int argc, char** argv)
 	Complex<double> e = a*b;
 	printf("New complex number is: (%f, j%f)\n", e.getRealPart(), e.getImaginaryPart());
 	std::cout << cplx << std::endl;
+	b.complexConjugate();
+	std::cout << b << std::endl;
 	/***
 	 **
 	 **		Testing the probability functionality
