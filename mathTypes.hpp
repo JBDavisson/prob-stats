@@ -1,4 +1,5 @@
 #include "mathTypes.h"
+#include <cmath>
 
 template <typename T>
 Complex<T>::Complex()
