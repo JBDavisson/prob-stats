@@ -65,11 +65,32 @@ Component Complex<T>::getImaginaryPart() const
 
 //Begin operator overloads
 template <typename T>
-std::ostream& Complex<T>::operator << (std::ostream& os/*, const Complex<T>& c*/) 
+Complex<T> Complex<T>::operator + (Complex<T> com)
 {
-	os << "(" << this->getRealPart() << ", j" << this->getImaginaryPart() << ")";
-	return os;
+	Complex<T> c((this->a + com.a), (this->b + com.b));
+	//c.setComponents((this->a + com.a), (this->b + com.b));
+	return (Complex<T>)c;
 }
+
+template <typename T>
+Complex<T> Complex<T>::operator * (Complex<T> com)
+{
+	Complex<T> c((this->a*com.a - this->b*com.b), (this->a*com.b + com.a*this->b));
+	return (Complex<T>)c;
+}
+
+template <typename T>
+void Complex<T>::complexConjugate()
+{
+	Component temp = -(this->b);
+	this->setComponents(this->a, temp);
+}
+
+/*
+template <typename T>
+std::ostream& Complex<T>::operator << (std::ostream& os, const Complex<T>& com) 
+*/
+
 
 template <typename T>
 Complex<T>::~Complex()

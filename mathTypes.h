@@ -34,8 +34,15 @@ class Complex
 		Magnitude 		getMagnitude() const;
 		Phase 			getPhase(bool rad) const;
 		void			setComponents(const Component a, const Component b);
+		void	 		complexConjugate();
 		//Operator Overloads
-		std::ostream& operator << (std::ostream& os/*, const Complex<T>& c*/);
+		Complex<T> operator + (Complex<T> com);
+		Complex<T> operator * (Complex<T> com);
+		friend std::ostream& operator << (std::ostream& os, Complex<T> com)
+		{
+			os << "(" << com.getRealPart() << ", j" << com.getImaginaryPart() << ")";
+			return os;
+		}
 		
 		//Class object destructor
 		~Complex();

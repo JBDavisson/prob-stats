@@ -8,10 +8,19 @@ int main(int argc, char** argv)
 {
 	Complex<double> cplx(1, 1);
 	printf("Magnitude is: %f\n", cplx.getMagnitude());
-	printf("Phase angle is: %f\n", cplx.getPhase(false));
+	printf("Phase angle is: %f radians\n", cplx.getPhase(true));
+	printf("Phase angle is: %f degrees\n", cplx.getPhase(false));
 	cplx.setComponents(2, 1);
 	printf("Magnitude is: %f\n", cplx.getMagnitude());
-	printf("Phase angle is: %f\n", cplx.getPhase(false));
+	printf("Phase angle is: %f radians\n", cplx.getPhase(true));
+	printf("Phase angle is: %f degrees\n", cplx.getPhase(false));
+	Complex<double> a(1,1);
+	Complex<double> b(2,2);
+	Complex<double> d = a + b;
+	printf("New complex number is: (%f, j%f)\n", d.getRealPart(), d.getImaginaryPart());
+	Complex<double> e = a*b;
+	printf("New complex number is: (%f, j%f)\n", e.getRealPart(), e.getImaginaryPart());
+	std::cout << cplx << std::endl;
 	/*
 	printf("Factorial of 3 is: %d.\n", factorial<int>(3));
 	printf("nrDescent(2,3) = %d\n", nrDescent<int>(2,3));
