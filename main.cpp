@@ -21,7 +21,10 @@ int main(int argc, char** argv)
 	Complex<double> e = a*b;
 	printf("New complex number is: (%f, j%f)\n", e.getRealPart(), e.getImaginaryPart());
 	std::cout << cplx << std::endl;
-	/*
+	/***
+	 **
+	 **		Testing the probability functionality
+	 **
 	printf("Factorial of 3 is: %d.\n", factorial<int>(3));
 	printf("nrDescent(2,3) = %d\n", nrDescent<int>(2,3));
 	printf("nrDescent(3,2) = %d\n", nrDescent<int>(3,2));

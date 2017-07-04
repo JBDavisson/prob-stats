@@ -10,8 +10,6 @@ typedef double_t Component;
 typedef double_t Magnitude;
 typedef double_t Phase;
 
-
-
 template <typename T>
 class Complex
 {

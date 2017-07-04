@@ -1,6 +1,12 @@
 #include "mathTypes.h"
 #include <cmath>
 
+
+/***
+ *
+ *		Begin Method definitions for class: Complex<T>
+ *
+ **/
 template <typename T>
 Complex<T>::Complex()
 {
@@ -86,13 +92,12 @@ void Complex<T>::complexConjugate()
 	this->setComponents(this->a, temp);
 }
 
-/*
-template <typename T>
-std::ostream& Complex<T>::operator << (std::ostream& os, const Complex<T>& com) 
-*/
-
-
 template <typename T>
 Complex<T>::~Complex()
-{
-}
+{}
+
+/***
+ *
+ *		End Method definitions for class: Complex<T>
+ *
+ **/
