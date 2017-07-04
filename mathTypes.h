@@ -4,9 +4,13 @@
 #include <cmath>
 #include <iostream>
 
+#define PI 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825
+
 typedef double_t Component;
 typedef double_t Magnitude;
 typedef double_t Phase;
+
+
 
 template <typename T>
 class Complex
@@ -28,8 +32,8 @@ class Complex
 		Component		getRealPart() const;
 		Component		getImaginaryPart() const;
 		Magnitude 		getMagnitude() const;
-		Phase 			getPhase() const;
-		
+		Phase 			getPhase(bool rad) const;
+		void			setComponents(const Component a, const Component b);
 		//Operator Overloads
 		std::ostream& operator << (std::ostream& os/*, const Complex<T>& c*/);
 		
