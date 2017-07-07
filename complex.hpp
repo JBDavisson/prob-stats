@@ -58,6 +58,19 @@ void Complex<T>::setComponents(const Component re, const Component im)
 }
 
 template <typename T>
+void Complex<T>::setPolarComponents(Magnitude mag, Phase angle, bool rad)
+{
+	if(rad == false)
+	{
+		setComponents((mag*std::cos(angle)), (mag*std::sin((180/PI)*angle)));
+	}
+	else
+	{
+		setComponents((mag*std::cos(angle)), (mag*std::sin(angle)));
+	}
+}
+
+template <typename T>
 Component Complex<T>::getRealPart() const
 {
 	return (Component)a;

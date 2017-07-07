@@ -23,6 +23,9 @@ int main(int argc, char** argv)
 	std::cout << cplx << std::endl;
 	b.complexConjugate();
 	std::cout << b << std::endl;
+	Complex<double> test;
+	test.setPolarComponents(1.414, 45, false);
+	std::cout << test << std::endl;
 	/***
 	 **
 	 **		Testing the probability functionality

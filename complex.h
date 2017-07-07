@@ -33,6 +33,7 @@ class Complex
 		Phase 			getPhase(bool rad) const;
 		void			setComponents(const Component a, const Component b);
 		void	 		complexConjugate();
+		void			setPolarComponents(Magnitude mag, Phase angle, bool rad);
 		//Operator Overloads
 		Complex<T> operator + (Complex<T> com);
 		Complex<T> operator * (Complex<T> com);
