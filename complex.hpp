@@ -1,6 +1,15 @@
+/**
+ *	File:			complex.hpp
+ *	Author:			Jacob B Davisson
+ *	Class:			Complex
+ *	Purpose:		Implementation file for class providing implementation of Complex number
+ *	Origination:
+ *	Last Modified:	08 July 2017
+ *
+ */
+
 #include "mathTypes.h"
 #include <cmath>
-
 
 /***
  *
@@ -44,7 +53,7 @@ Magnitude Complex<T>::getMagnitude() const
 
 template<typename T>
 Phase Complex<T>::getPhase(bool rad) const
-{	
+{
 	return ((rad == true) ? (Phase)(ang) : (Phase)((180/PI)*ang));
 }
 
@@ -101,8 +110,7 @@ Complex<T> Complex<T>::operator * (Complex<T> com)
 template <typename T>
 void Complex<T>::complexConjugate()
 {
-	Component temp = -(this->b);
-	setComponents(this->a, temp);
+	setComponents(this->a, (-this->b));
 }
 
 template <typename T>

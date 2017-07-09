@@ -1,3 +1,12 @@
+/**
+ * 	File:			prob.h
+ *	Author:			Jacob B Davisson
+ * 	Purpose:		Provides probability computing functionality
+ *	Origination:	12 June 2017
+ *	Last Modified:	08 July 2017
+ *
+ **/
+
 #ifndef __PROB__H__
 #define __PROB__H__
 
@@ -11,9 +20,9 @@ S binomDist(T n, T k, S p)
 	S q = (1 - p);
 	T bin = binomCoeff(n, k);
 	S temp = S();
-	if(bin == 0 || q <= 0 || p <= 0 || p>=1) 
-	{ 
-		temp = 0; 
+	if(bin == 0 || q <= 0 || p <= 0 || p>=1)
+	{
+		temp = 0;
 	}
 	else
 	{
@@ -73,8 +82,8 @@ template <typename T = int, typename S = double>
 S negBinomial(T n, T x, S p)
 {
 	if((x > n) || (p >= 1) || (p <= 0))
-	{ 
-		return (S)0; 
+	{
+		return (S)0;
 	}
 	S q = (1 - p);
 	T a = (n - 1);

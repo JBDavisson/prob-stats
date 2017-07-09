@@ -1,3 +1,13 @@
+/**
+ *	File:			complex.h
+ *	Author:			Jacob B Davisson
+ *	Class:			Complex
+ *	Purpose:		Header file for class providing implementation of Complex number
+ *	Origination:
+ *	Last Modified:	08 July 2017
+ *
+ */
+
 #ifndef __COMPLEX__HH__
 #define __COMPLEX__HH__
 
@@ -10,7 +20,7 @@ typedef double_t Component;
 typedef double_t Magnitude;
 typedef double_t Phase;
 
-template <typename T>
+template <typename T = double_t>
 class Complex
 {
 	private:
@@ -20,12 +30,12 @@ class Complex
 		Phase 		ang;
 		void 		computeMagnitude();
 		void 		computePhase();
-	
+
 	public:
 		//Constructor methods.
 		Complex<T>();
 		Complex<T>(const Component a, const Component b);
-		
+
 		//Begin non-constructor methods.
 		Component		getRealPart() const;
 		Component		getImaginaryPart() const;
@@ -53,7 +63,7 @@ class Complex
 			}
 			return os;
 		}
-		
+
 		//Class object destructor
 		~Complex();
 };
