@@ -6,12 +6,13 @@
  *	Last Modified:	08 July 2017
  *
  **/
+ 
+#include <cstdint>
+#include "mathTypes.h"
 
 #ifndef __UTILS_HPP__
 #define __UTILS_HPP__
 
-#include <cstdint>
-#include "mathTypes.h"
 
 /**
  * 	Name:			Factorial

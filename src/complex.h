@@ -8,11 +8,11 @@
  *
  */
 
-#ifndef __COMPLEX__HH__
-#define __COMPLEX__HH__
-
 #include <cmath>
 #include <iostream>
+
+#ifndef __COMPLEX__HH__
+#define __COMPLEX__HH__
 
 #define PI 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825
 
@@ -49,11 +49,11 @@ class Complex
 		Complex<T> operator * (Complex<T> com);
 		friend std::ostream& operator << (std::ostream& os, Complex<T> com)
 		{
-			if(com.getImaginaryPart() >= 0)
+			/*if(com.getImaginaryPart() >= 0)
 			{
 				os << "(" << com.getRealPart() << ", j" << com.getImaginaryPart() << ")";
 			}
-			else if (com.getImaginaryPart() < 0)
+			else*/ if (com.getImaginaryPart() < 0)
 			{
 				os << "(" << com.getRealPart() << ", -j" << std::abs(com.getImaginaryPart()) << ")";
 			}

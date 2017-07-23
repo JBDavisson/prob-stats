@@ -7,12 +7,12 @@
  *
  **/
 
-#ifndef __PROB__H__
-#define __PROB__H__
-
 #include "utils.h"
 #include <cmath>
 #include <cstdio>
+
+#ifndef __PROB__H__
+#define __PROB__H__
 
 template <typename T = int, typename S = double>
 S binomDist(T n, T k, S p)

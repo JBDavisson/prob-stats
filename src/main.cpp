@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 	std::cout << "Complex conjugate is: " << b << std::endl;
 	Complex<double_t> test;
 	test.setPolarComponents(1.414, 45, false);
-	std::cout << test << std::endl;
+	std::cout << "After setting components in polar form: " << test << std::endl;
 	/***
 	 **
 	 **		Testing the probability functionality
