@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 	Complex<double_t> test;
 	test.setPolarComponents(1.414, 45, false);
 	std::cout << "After setting components in polar form: " << test << std::endl;
-	/***
+	 **
 	 **
 	 **		Testing the probability functionality
 	 **
