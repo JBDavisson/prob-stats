@@ -4,7 +4,7 @@ SRC 		= ./src
 BUILDDIR 	= ./build
 OBJDIR 		= ./build/obj
 OBJ 		= $(OBJDIR)/main.o
-DEP 		= $(SRC)/utils.h $(SRC)/mathTypes.h
+DEP 		= $(SRC)/utils.h $(SRC)/mathTypes.h $(SRC)/polar.h $(SRC)/rect.h 
 BIN 		= $(BUILDDIR)/test
 
 $(BIN): $(OBJ)

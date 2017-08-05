@@ -1,64 +1,65 @@
 /**
- *	File:			complex.hpp
+ *	File:			rect.hpp
  *	Author:			Jacob B Davisson
- *	Class:			Complex
+ *	Class:			Rect
  *	Purpose:		Implementation file for class providing implementation of Complex number
+ *					in rectangular form.
  *	Origination:
  *	Last Modified:	08 July 2017
  *
  */
 
-#include "mathTypes.h"
-#include <cmath>
+//#include "mathTypes.h"
+//#include <cmath>
 
 /***
  *
- *		Begin Method definitions for class: Complex<T>
+ *		Begin Method definitions for class: Rect<T>
  *
  **/
 template <typename T>
-Complex<T>::Complex()
+Rect<T>::Rect()
 {
-	a = double_t();
-	b = double_t();
-	mag = double_t();
+	a 		= double();
+	b 		= double();
+	mag 	= double();
 }
 
 template <typename T>
-Complex<T>::Complex(const Component re, const Component im)
+Rect<T>::Rect(const Component re, const Component im)
 {
-	a = re;
-	b = im;
+	a 		= re;
+	b 		= im;
 	computePhase();
 	computeMagnitude();
 }
 
 template <typename T>
-void Complex<T>::computeMagnitude()
+void Rect<T>::computeMagnitude()
 {
 	mag = std::sqrt(std::pow(a, 2) + std::pow(b, 2));
 }
 
 template <typename T>
-void Complex<T>::computePhase()
+void Rect<T>::computePhase()
 {
 	ang = std::atan2(b, a);
 }
 
 template<typename T>
-Magnitude Complex<T>::getMagnitude() const
+Magnitude Rect<T>::getMagnitude() const
 {
 	return (Magnitude)(mag);
 }
 
 template<typename T>
-Phase Complex<T>::getPhase(bool rad) const
+Phase Rect<T>::getPhase(bool rad) const
 {
 	return ((rad == true) ? (Phase)(ang) : (Phase)((180/PI)*ang));
 }
 
 template <typename T>
-void Complex<T>::setComponents(const Component re, const Component im)
+void Rect<T>::setComponents(const Component re, const Component im)
 {
 	a = re;
 	b = im;
@@ -67,7 +68,7 @@ void Complex<T>::setComponents(const Component re, const Component im)
 }
 
 template <typename T>
-void Complex<T>::setPolarComponents(Magnitude mag, Phase angle, bool rad)
+void Rect<T>::setPolarComponents(Magnitude mag, Phase angle, bool rad)
 {
 	if(rad == false)
 	{
@@ -80,45 +81,45 @@ void Complex<T>::setPolarComponents(Magnitude mag, Phase angle, bool rad)
 }
 
 template <typename T>
-Component Complex<T>::getRealPart() const
+Component Rect<T>::getRealPart() const
 {
 	return (Component)a;
 }
 
 template <typename T>
-Component Complex<T>::getImaginaryPart() const
+Component Rect<T>::getImaginaryPart() const
 {
 	return (Component)b;
 }
 
 //Begin operator overloads
 template <typename T>
-Complex<T> Complex<T>::operator + (Complex<T> com)
+Rect<T> Rect<T>::operator + (Rect<T> com)
 {
-	Complex<T> c((this->a + com.a), (this->b + com.b));
+	Rect<T> c((this->a + com.a), (this->b + com.b));
 	//c.setComponents((this->a + com.a), (this->b + com.b));
-	return (Complex<T>)c;
+	return (Rect<T>)c;
 }
 
 template <typename T>
-Complex<T> Complex<T>::operator * (Complex<T> com)
+Rect<T> Rect<T>::operator * (Rect<T> com)
 {
-	Complex<T> c((this->a*com.a - this->b*com.b), (this->a*com.b + com.a*this->b));
-	return (Complex<T>)c;
+	Rect<T> c((this->a*com.a - this->b*com.b), (this->a*com.b + com.a*this->b));
+	return (Rect<T>)c;
 }
 
 template <typename T>
-void Complex<T>::complexConjugate()
+void Rect<T>::complexConjugate()
 {
 	setComponents(this->a, (-this->b));
 }
 
 template <typename T>
-Complex<T>::~Complex()
+Rect<T>::~Rect()
 {}
 
 /***
  *
- *		End Method definitions for class: Complex<T>
+ *		End Method definitions for class: Rect<T>
  *
  **/

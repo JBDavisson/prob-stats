@@ -12,7 +12,8 @@
 #define __MATH__TYPES__HH__
 
 #include "polar.h"
-#include "complex.h"
+#include "rect.h"
+#include "mathDefs.h"
 
 
 #endif
