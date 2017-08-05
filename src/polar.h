@@ -12,6 +12,7 @@
 #include <cmath>
 #include <iostream>
 
+
 #ifndef __POLAR__H__
 #define __POLAR__H__
 
@@ -32,14 +33,21 @@ namespace Math
 			//Constructors:
 			Polar();
 			Polar(Magnitude m, Phase p);
-			Polar(const Rect<T>& r);		//Construct polar form number from Rectangular.
+			Polar(const class Rect<T>& r);		//Construct polar form number from Rectangular.
 											//Unsure as to exactly why this doesn't work each way.
 			
 			//Accessor methods:
 			Magnitude getMagnitude(void) const;
 			Phase	  getPhase(void) const;
+			Component getReal(void) const;
+			Component getImaginary(void) const;
 
 			//Operator Overloads:
+			Polar<T> operator + (const Polar<T> p);
+			Polar<T> operator - (const Polar<T> p);
+			Polar<T> operator * (const Polar<T> p);
+			Polar<T> operator / (const Polar<T> p);
+
 			friend std::ostream& operator << (std::ostream& os, Polar<T>& p)
 			{
 				os << p.getMagnitude() << unicodeAngle << p.getPhase();
