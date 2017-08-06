@@ -70,7 +70,7 @@ void Rect<T>::setComponents(const Component re, const Component im)
 template <typename T>
 void Rect<T>::setPolarComponents(Magnitude mag, Phase angle, bool rad)
 {
-	if(rad == false)
+	if(rad == true)
 	{
 		setComponents((mag*std::cos(angle)), (mag*std::sin((180/PI)*angle)));
 	}
@@ -102,10 +102,34 @@ Rect<T> Rect<T>::operator + (Rect<T> com)
 }
 
 template <typename T>
+Rect<T> Rect<T>::operator - (Rect<T> com)
+{
+	return Rect<T>((this->a - com.a), (this->b - com.b));
+}
+
+template <typename T>
 Rect<T> Rect<T>::operator * (Rect<T> com)
 {
 	Rect<T> c((this->a*com.a - this->b*com.b), (this->a*com.b + com.a*this->b));
 	return (Rect<T>)c;
+}
+
+template <typename T>
+Rect<T> Rect<T>::operator / (Rect<T> com)
+{
+	this->computeMagnitude(); com.computeMagnitude();
+	this->computePhase();	  com.computePhase();
+	T c, d, e, f;
+	c = this->getMagnitude();	
+	d = com.getMagnitude();
+	
+	e = this->getPhase(false);	
+	f = com.getPhase(false);
+	T aa = c/d;
+	T bb = e-f;
+	Rect<T> temp;
+	temp.setPolarComponents(aa, bb, false);
+	return temp;	
 }
 
 template <typename T>

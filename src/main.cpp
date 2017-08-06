@@ -18,6 +18,11 @@ int main(int argc, char** argv)
 	printf("Phase angle is: %f degrees\n", cplx.getPhase(false));
 	Math::Rect<double> a(1,1);
 	Math::Rect<double> b(2,2);
+
+	std::cout << a*b << std::endl;
+	std::cout << (a - b) << std::endl;
+	std::cout << (b/a) << std::endl;
+	/*
 	Math::Rect<double> d = a + b;
 	printf("New complex number is: (%f, j%f)\n", d.getRealPart(), d.getImaginaryPart());
 	Math::Rect<double> e = a*b;
@@ -28,7 +33,7 @@ int main(int argc, char** argv)
 	Math::Rect<double> test;
 	test.setPolarComponents(1.414, 45, false);
 	std::cout << "After setting components in polar form: " << test << std::endl;
-	
+	*/
 	/* **
 	 **
 	 **		Testing the probability functionality

@@ -12,7 +12,6 @@
 #include <cmath>
 #include <iostream>
 
-
 #ifndef __POLAR__H__
 #define __POLAR__H__
 
@@ -34,7 +33,6 @@ namespace Math
 			Polar();
 			Polar(Magnitude m, Phase p);
 			Polar(const class Rect<T>& r);		//Construct polar form number from Rectangular.
-											//Unsure as to exactly why this doesn't work each way.
 			
 			//Accessor methods:
 			Magnitude getMagnitude(void) const;

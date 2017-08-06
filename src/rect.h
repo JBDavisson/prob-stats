@@ -19,6 +19,7 @@
 
 namespace Math
 {
+
 	template <typename T = double>
 	class Rect
 	{
@@ -45,7 +46,9 @@ namespace Math
 			void			setPolarComponents(Magnitude mag, Phase angle, bool rad);
 			//Operator Overloads
 			Rect<T> operator + (Rect<T> com);
+			Rect<T> operator - (Rect<T> com);
 			Rect<T> operator * (Rect<T> com);
+			Rect<T> operator / (Rect<T> com);
 			friend std::ostream& operator << (std::ostream& os, Rect<T> com)
 			{
 				if (com.getImaginaryPart() < 0)

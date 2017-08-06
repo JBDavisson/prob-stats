@@ -11,7 +11,7 @@ $(BIN): $(OBJ)
 	@echo 'Building executable: $(BIN)'
 	@$(CCC) $(CCFLAGS) $(OBJ) -o $(BIN)
 	@echo 'Creating symbolic link to executable in root project directory.'
-	@ln -s build/test test
+	@ln -fs build/test test
 	
 $(OBJDIR)/main.o: $(DEP)
 	@echo 'Creating sub directories: $(OBJDIR) in root project directory.'
