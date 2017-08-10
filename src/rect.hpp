@@ -55,7 +55,7 @@ Magnitude Rect<T>::getMagnitude() const
 template<typename T>
 Phase Rect<T>::getPhase(bool rad) const
 {
-	return ((rad == true) ? (Phase)(ang) : (Phase)((180/PI)*ang));
+	return ((rad == true) ? (Phase)(ang) : (Phase)((180/Math::Consts::PI)*ang));
 }
 
 template <typename T>
@@ -72,7 +72,7 @@ void Rect<T>::setPolarComponents(Magnitude mag, Phase angle, bool rad)
 {
 	if(rad == true)
 	{
-		setComponents((mag*std::cos(angle)), (mag*std::sin((180/PI)*angle)));
+		setComponents((mag*std::cos(angle)), (mag*std::sin((180/Math::Consts::PI)*angle)));
 	}
 	else
 	{

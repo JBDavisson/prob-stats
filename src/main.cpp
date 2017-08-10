@@ -1,11 +1,14 @@
-#include "utils.h"
-#include "prob.h"
+
 #include "mathTypes.h"
-#include <iostream>
+#include "prob.h"
+#include "utils.h"
+
 #include <cstdio>
+#include <iostream>
 
 int main(int argc, char** argv)
 {
+	printf("e = %f\n", Math::Consts::e);
 	Math::Rect<double> cplx(1, 1);
 	Math::Polar<> pol(2,30);
 	std::cout << "Polar form:" << pol << std::endl;
@@ -22,7 +25,7 @@ int main(int argc, char** argv)
 	std::cout << a*b << std::endl;
 	std::cout << (a - b) << std::endl;
 	std::cout << (b/a) << std::endl;
-	/*
+	
 	Math::Rect<double> d = a + b;
 	printf("New complex number is: (%f, j%f)\n", d.getRealPart(), d.getImaginaryPart());
 	Math::Rect<double> e = a*b;
@@ -33,11 +36,11 @@ int main(int argc, char** argv)
 	Math::Rect<double> test;
 	test.setPolarComponents(1.414, 45, false);
 	std::cout << "After setting components in polar form: " << test << std::endl;
-	*/
-	/* **
-	 **
-	 **		Testing the probability functionality
-	 ***/
+	
+	
+	 //
+	 //		Testing the probability functionality
+	 //
 	printf("Factorial of 3 is: %d.\n", Utils::factorial<int>(3));
 	printf("nrDescent(2,3) = %d\n", Utils::nrDescent<int>(2,3));
 	printf("nrDescent(3,2) = %d\n", Utils::nrDescent<int>(3,2));
