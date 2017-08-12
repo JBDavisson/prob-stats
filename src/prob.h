@@ -20,7 +20,7 @@ namespace Probability
 	S binomDist(T n, T k, S p)
 	{
 		S q = (1 - p);
-		T bin = Utils::binomCoeff(n, k);
+		T bin = Math::Utils::binomCoeff(n, k);
 		S temp = S();
 		if(bin == 0 || q <= 0 || p <= 0 || p>=1)
 		{
@@ -44,7 +44,7 @@ namespace Probability
 	S poissonDist(S lambda, T x)
 	{
 		S b = std::pow(lambda, x);
-		T temp = Utils::factorial<T>(x);
+		T temp = Math::Utils::factorial<T>(x);
 		//printf("factorial<T>(x): %d\n", temp);
 		S a = std::exp(-lambda);
 		S p = (S)((a*b)/temp);
@@ -57,11 +57,11 @@ namespace Probability
 	S nrProbability(T n, T k, T t)
 	{
 		S retVal = 0.0;
-		T bin = Utils::binomCoeff(n, k);
+		T bin = Math::Utils::binomCoeff(n, k);
 		//printf("bin: %d\n", bin);
 		if (bin <= retVal) { return retVal; }
-		S num = Utils::nrDescent(t, k);
-		S den = Utils::nrDescent(t, n);
+		S num = Math::Utils::nrDescent(t, k);
+		S den = Math::Utils::nrDescent(t, n);
 		//printf("num = %f\n", num);
 		//printf("den = %f\n", den);
 		retVal = (bin*(num/den));
@@ -90,7 +90,7 @@ namespace Probability
 		S q = (1 - p);
 		T a = (n - 1);
 		T b = (x - 1);
-		T coeff = Utils::binomCoeff(a, b);
+		T coeff = Math::Utils::binomCoeff(a, b);
 		S temp = std::pow(p, b)*std::pow(q, (a-b));
 		S retVal = coeff*temp;
 		return retVal;

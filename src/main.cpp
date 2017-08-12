@@ -41,15 +41,15 @@ int main(int argc, char** argv)
 	 //
 	 //		Testing the probability functionality
 	 //
-	printf("Factorial of 3 is: %d.\n", Utils::factorial<int>(3));
-	printf("nrDescent(2,3) = %d\n", Utils::nrDescent<int>(2,3));
-	printf("nrDescent(3,2) = %d\n", Utils::nrDescent<int>(3,2));
-	printf("nrDescent(5,2) = %d\n", Utils::nrDescent<int>(5,2));
-	printf("nrDescent(5,1) = %d\n", Utils::nrDescent<int>(5,1));
-	printf("binomCoeff(3,1) = %d\n", Utils::binomCoeff<int>(3,1));
-	printf("binomCoeff(3,2) = %d\n", Utils::binomCoeff<int>(3,2));
-	printf("binomCoeff(3,3) = %d\n", Utils::binomCoeff<int>(3,3));
-	printf("binomCoeff(3,4) = %d\n", Utils::binomCoeff<int>(3,4));
+	printf("Factorial of 3 is: %d.\n", Math::Utils::factorial<int>(3));
+	printf("nrDescent(2,3) = %d\n", Math::Utils::nrDescent<int>(2,3));
+	printf("nrDescent(3,2) = %d\n", Math::Utils::nrDescent<int>(3,2));
+	printf("nrDescent(5,2) = %d\n", Math::Utils::nrDescent<int>(5,2));
+	printf("nrDescent(5,1) = %d\n", Math::Utils::nrDescent<int>(5,1));
+	printf("binomCoeff(3,1) = %d\n", Math::Utils::binomCoeff<int>(3,1));
+	printf("binomCoeff(3,2) = %d\n", Math::Utils::binomCoeff<int>(3,2));
+	printf("binomCoeff(3,3) = %d\n", Math::Utils::binomCoeff<int>(3,3));
+	printf("binomCoeff(3,4) = %d\n", Math::Utils::binomCoeff<int>(3,4));
 	printf("binomDist(3, 1, 0.5) = %f\n", Probability::binomDist(3,1,.5));
 	printf("binomDist(10,2,0.5) = %f\n", Probability::binomDist(10,2,0.5));
 	printf("binomDist(3,1,0.6) = %f\n", Probability::binomDist(3,1,0.6));
