@@ -30,7 +30,10 @@ namespace Math
 			Phase 		ang;
 			void 		computeMagnitude();
 			void 		computePhase();
-
+			Rect<T> add(const Rect<T> com);
+			Rect<T> sub(const Rect<T> com);
+			Rect<T> mul(const Rect<T> com);
+			Rect<T> div(const Rect<T> com);
 		public:
 			//Constructor methods.
 			Rect<T>();
@@ -45,10 +48,10 @@ namespace Math
 			void	 		complexConjugate();
 			void			setPolarComponents(Magnitude mag, Phase angle, bool rad);
 			//Operator Overloads
-			Rect<T> operator + (Rect<T> com);
-			Rect<T> operator - (Rect<T> com);
-			Rect<T> operator * (Rect<T> com);
-			Rect<T> operator / (Rect<T> com);
+			Rect<T> operator + (const Rect<T> com);
+			Rect<T> operator - (const Rect<T> com);
+			Rect<T> operator * (const Rect<T> com);
+			Rect<T> operator / (const Rect<T> com);
 			friend std::ostream& operator << (std::ostream& os, Rect<T> com)
 			{
 				if (com.getImaginaryPart() < 0)

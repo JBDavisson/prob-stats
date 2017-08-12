@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 {
 	printf("e = %f\n", Math::Consts::e);
 	Math::Rect<double> cplx(1, 1);
-	Math::Polar<> pol(2,30);
+	Math::Polar<> pol(2,120);
 	std::cout << "Polar form:" << pol << std::endl;
 	printf("Magnitude is: %f\n", cplx.getMagnitude());
 	printf("Phase angle is: %f radians\n", cplx.getPhase(true));

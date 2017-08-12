@@ -41,7 +41,7 @@ Component Polar<T>::getImaginary(void) const
 }
 
 template <typename T>
-Polar<T> Polar<T>::operator + (const Polar<T> p)
+Polar<T> Polar<T>::add(const Polar<T> p)
 {
 	Magnitude m = this->getReal() + p.getReal();
 	Phase 	  a = this->getImaginary() + p.getImaginary();
@@ -49,7 +49,7 @@ Polar<T> Polar<T>::operator + (const Polar<T> p)
 }
 
 template <typename T>
-Polar<T> Polar<T>::operator - (const Polar<T> p)
+Polar<T> Polar<T>::sub(const Polar<T> p)
 {
 	Magnitude m = this->getReal() - p.getReal();
 	Phase 	  a = this->getImaginary() - p.getImaginary();
@@ -57,15 +57,39 @@ Polar<T> Polar<T>::operator - (const Polar<T> p)
 }
 
 template <typename T>
-Polar<T> Polar<T>::operator * (const Polar<T> p)
+Polar<T> Polar<T>::mul(const Polar<T> p)
 {
 	return Polar<T>((this->mag * p.mag), (this->ang + p.ang));
 }
 
 template <typename T>
-Polar<T> Polar<T>::operator / (const Polar<T> p)
+Polar<T> Polar<T>::div(const Polar<T> p)
 {
 	return Polar<T>((this->mag / p.mag), (this->ang - p.ang));
+}
+
+template <typename T>
+Polar<T> Polar<T>::operator + (const Polar<T> p)
+{
+	return add(p);
+}
+
+template <typename T>
+Polar<T> Polar<T>::operator - (const Polar<T> p)
+{
+	return sub(p);
+}
+
+template <typename T>
+Polar<T> Polar<T>::operator * (const Polar<T> p)
+{
+	return mul(p);
+}
+
+template <typename T>
+Polar<T> Polar<T>::operator / (const Polar<T> p)
+{
+	return div(p);
 }
 
 template <typename T>

@@ -28,6 +28,10 @@ namespace Math
 		private:
 			Magnitude mag;
 			Phase ang;
+			Polar<T> add(const Polar<T> p);
+			Polar<T> sub(const Polar<T> p);
+			Polar<T> mul(const Polar<T> p);
+			Polar<T> div(const Polar<T> p);
 		public:
 			//Constructors:
 			Polar();

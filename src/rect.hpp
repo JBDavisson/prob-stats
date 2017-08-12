@@ -92,44 +92,68 @@ Component Rect<T>::getImaginaryPart() const
 	return (Component)b;
 }
 
-//Begin operator overloads
 template <typename T>
-Rect<T> Rect<T>::operator + (Rect<T> com)
+Rect<T> Rect<T>::add(const Rect<T> com)
 {
 	Rect<T> c((this->a + com.a), (this->b + com.b));
-	//c.setComponents((this->a + com.a), (this->b + com.b));
 	return (Rect<T>)c;
 }
 
 template <typename T>
-Rect<T> Rect<T>::operator - (Rect<T> com)
+Rect<T> Rect<T>::sub(const Rect<T> com)
 {
 	return Rect<T>((this->a - com.a), (this->b - com.b));
 }
 
 template <typename T>
-Rect<T> Rect<T>::operator * (Rect<T> com)
+Rect<T> Rect<T>::mul(const Rect<T> com)
 {
 	Rect<T> c((this->a*com.a - this->b*com.b), (this->a*com.b + com.a*this->b));
 	return (Rect<T>)c;
 }
 
 template <typename T>
-Rect<T> Rect<T>::operator / (Rect<T> com)
+Rect<T> Rect<T>::div(const Rect<T> com)
 {
-	this->computeMagnitude(); com.computeMagnitude();
-	this->computePhase();	  com.computePhase();
+	Rect<T> t = com;
+	this->computeMagnitude(); t.computeMagnitude();
+	this->computePhase();	  t.computePhase();
 	T c, d, e, f;
 	c = this->getMagnitude();	
-	d = com.getMagnitude();
+	d = t.getMagnitude();
 	
 	e = this->getPhase(false);	
-	f = com.getPhase(false);
+	f = t.getPhase(false);
 	T aa = c/d;
 	T bb = e-f;
 	Rect<T> temp;
 	temp.setPolarComponents(aa, bb, false);
-	return temp;	
+	return temp;
+}
+
+//Begin operator overloads
+template <typename T>
+Rect<T> Rect<T>::operator + (const Rect<T> com)
+{
+	return add(com);
+}
+
+template <typename T>
+Rect<T> Rect<T>::operator - (const Rect<T> com)
+{
+	return sub(com);
+}
+
+template <typename T>
+Rect<T> Rect<T>::operator * (const Rect<T> com)
+{
+	return mul(com);
+}
+
+template <typename T>
+Rect<T> Rect<T>::operator / (const Rect<T> com)
+{
+	return div(com);
 }
 
 template <typename T>
